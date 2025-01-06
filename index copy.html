@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Login & Registration form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+
+<body>
+    <!--Header-->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav_logo">Company Logo</a>
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Home</a>
+                    <a href="#" class="nav_link">Product</a>
+                    <a href="#" class="nav_link">Services</a>
+                    <a href="#" class="nav_link">Contact</a>
+                </li>
+            </ul>
+
+            <button class="button">Login</button>
+
+
+        </nav>
+
+    </header>
+    <!-- Home -->
+    <section class="home">
+        <div class="form_container">
+            <i class="uil uil-times form_close"></i>
+            <!--Login Form-->
+            <div class="form login_form">
+                <form action="#">
+                    <h2>Login</h2>
+                    <div class="input_box">
+                        <input type="email" placeholder="Enter your e-mail adress" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="passwrod" placeholder="Enter your password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+
+                    <div class="option_field">
+                        <span class="checkbox">
+                            <input type="checkbox" id="check">
+                            <label for="check">Remember me</label>
+                        </span>
+                        <a href="#" class="forgot_pw">Forgot password?</a>
+
+                    </div>
+                    <button class="button">Login Now</button>
+
+                    <div class="login_signup">
+                        Don't have an account? <a href="#" id="signup"></a> Sign Up </div>
+                </form>
+
+            </div>
+
+            <div class="form signup">
+                <form id="signupForm" action="#">
+                    <h2>Sign up</h2>
+                    
+                    <!-- Name -->
+                    <div class="input_box">
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required
+                            pattern="^[A-Za-z]{3,30}$" 
+                            title="Name must be between 3-30 characters and contain only letters." />
+                            <i class="uil uil-user-circle-alt name"></i>
+
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="input_box">
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    
+                    <!-- Age -->
+                    <div class="input_box">
+                        <input type="number" id="age" name="age" placeholder="Enter your age" min="18" max="120" required />
+                        <i class="uil uil-calendar-alt age"></i>
+
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="input_box">
+                        <input type="tel" id="phone" name="phone" placeholder="+XXX XXX XXXXX" 
+                            pattern="^\+[\d]{3}\s[\d]{3}\s[\d]{5}$" 
+                            title="Phone number must match the format: +XXX XXX XXXXX" required />
+                        <i class="uil uil-phone-alt phone"></i>
+                    </div>
+                    
+                    <!-- Password -->
+                    <div class="input_box">
+                        <input type="password" id="password" name="password" placeholder="Create password" required
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                            title="Password must be at least 8 characters, include uppercase, lowercase, number, and special character." />
+                        <i class="uil uil-lock password"></i>
+                    </div>
+                    
+                    <!-- Confirm Password -->
+                    <div class="input_box">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required />
+                        <i class="uil uil-lock password"></i>
+                    </div>
+                    
+                    <div class="option_field">
+                        <span class="checkbox">
+                            <input type="checkbox" id="remember" />
+                            <label for="remember">Remember me</label>
+                        </span>
+                    </div>
+                    
+                    <button type="submit" class="button">Sign up Now</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

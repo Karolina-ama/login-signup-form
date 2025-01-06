@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Login & Registration form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+
+<body>
+    <div class="form_container">
+
+        <div class="form login_form" id="loginForm">
+            <form action="#">
+                <h2>Login</h2>
+                <div class="input_box">
+                    <input type="email" placeholder="Enter your email address" required />
+                    <i class="uil uil-envelope-alt"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" placeholder="Enter your password" required />
+                    <i class="uil uil-lock"></i>
+                </div>
+                <div class="option_field">
+                    <span class="checkbox">
+                        <input type="checkbox" id="rememberLogin">
+                        <label for="rememberLogin">Remember me</label>
+                    </span>
+                    <a href="#" class="forgot_pw">Forgot password?</a>
+                </div>
+                <button type="submit" class="button">Login Now</button>
+                <div class="login_signup">
+                    Don't have an account? <a href="#" id="showSignUp">Sign Up</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form signup" id="signupForm" style="display: none;">
+            <form action="#">
+                <h2>Sign Up</h2>
+                <div class="input_box">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required
+                        pattern="^[A-Za-z]{3,30}$"
+                        title="Name must be between 3-30 characters and contain only letters." />
+                    <i class="uil uil-user"></i>
+                </div>
+                <div class="input_box">
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+                    <i class="uil uil-envelope-alt"></i>
+                </div>
+                <div class="input_box">
+                    <input type="number" id="age" name="age" placeholder="Enter your age" min="18" max="120" required />
+                    <i class="uil uil-calendar-alt"></i>
+                </div>
+                <div class="input_box">
+                    <input type="tel" id="phone" name="phone" placeholder="+XXX XXX XXXXX"
+                        pattern="^\+[\d]{3}\s[\d]{3}\s[\d]{5}$"
+                        title="Phone number must match the format: +XXX XXX XXXXX" required />
+                    <i class="uil uil-phone"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" id="password" name="password" placeholder="Create password" required
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                        title="Password must be at least 8 characters, include uppercase, lowercase, number, and special character." />
+                    <i class="uil uil-lock"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password"
+                        required />
+                    <i class="uil uil-lock"></i>
+                </div>
+                <button type="submit" class="button">Sign Up Now</button>
+                <div class="login_signup">
+                    Already have an account? <a href="#" id="showLogin">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const showSignUpLink = document.getElementById('showSignUp');
+            const showLoginLink = document.getElementById('showLogin');
+
+            // Show Sign-Up Form
+            showSignUpLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            });
+
+            // Show Login Form
+            showLoginLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                signupForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>
